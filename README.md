@@ -3,6 +3,7 @@
 
 # Бот для Qlyuker
 
+![start--qlyuker](https://github.com/user-attachments/assets/5c00a76b-946d-46a6-9243-06112b3dca35)
 
 
 # 🔥🔥 Используйте Python версии 3.10 - 3.11.5 🔥🔥
