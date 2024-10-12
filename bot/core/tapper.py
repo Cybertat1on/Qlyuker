@@ -289,7 +289,7 @@ class Tapper:
         try:
             response = await http_client.get(url='https://httpbin.org/ip', timeout=aiohttp.ClientTimeout(total=5))
             ip = (await response.json()).get('origin')
-            logger.info(f"<cyan>{self.session_name}</cyan> | Proxy IP: <green>{ip}<>/green>")
+            logger.info(f"<cyan>{self.session_name}</cyan> | Proxy IP: <green>{ip}</green>")
         except Exception as error:
             logger.error(f"<cyan>{self.session_name}</cyan> | Proxy: {proxy} | Error: {error}")
 
