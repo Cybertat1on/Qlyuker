@@ -1,4 +1,4 @@
-#!/bin/bash-low-unrelated-histories
+#!/bin/sh
 # Проверка на наличие папки venv
 if [ ! -d "venv" ]; then
     echo "Creating virtual environment..."
