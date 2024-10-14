@@ -11,15 +11,15 @@
 
 ## Features
 |                    Feature                    |   Supported    |
-|:---------------------------------------------:|:-------------  -:|
-|                Multithreading                 |       ✔️         |
-|         Proxy binding to the session          |       ✔️         |
-| Auto-registration of the account via ref link |       ✔️         |
-|          Automatic booster upgrades           |       ✔️         |
-|        Pyrogram .session file support         |       ✔️         |
+|:---------------------------------------------:|:--------------:|
+|                Multithreading                 |       ✔️       |
+|         Proxy binding to the session          |       ✔️       |
+| Auto-registration of the account via ref link |       ✔️      |  
+|          Automatic booster upgrades           |       ✔️       |
+|        Pyrogram .session file support         |       ✔️       |
 
 
-## [Settings](https://github.com/Mffff4/qlyukerbot/blob/main/.env-example/)
+## [Settings](https://github.com/Cybertat1on/Qlyuker/blob/main/.env-example/)
 |           Setting           |                                        Description                                        |
 |:------------------------:|:-----------------------------------------------------------------------------------------:|
 |  **API_ID / API_HASH**   | Data of the platform from which the Telegram session will be launched (default - android) |
