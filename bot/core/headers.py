@@ -1,11 +1,11 @@
 headers = {
     'Accept': '*/*',
     'Onboarding': '2',
-    'TGPlatform': 'ios',
+    'TGPlatform': 'android',
     'Locale': 'ru',
     'Accept-Language': 'ru',
     'Origin': 'https://qlyuker.io',
-    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X)',
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36',
     'Referer': 'https://qlyuker.io/upgrades',
     'Content-Type': 'application/json',
     'Sec-Fetch-Site': 'same-origin',

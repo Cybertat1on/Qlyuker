@@ -20,19 +20,21 @@
 
 
 ## [Settings](https://github.com/Mffff4/qlyukerbot/blob/main/.env-example/)
-|           Setting           |                                      Description                                       |
-|:---------------------------:|:--------------------------------------------------------------------------------------:|
-|    **API_ID / API_HASH**    | Data from the platform where the Telegram session will be launched (default - android) |
-|   **MIN_TAPS / MAX_TAPS**   |                   Number of taps per cycle (default from 10 to 100)                    |
-| **MIN_SLEEP_BETWEEN_TAPS**  |                    Minimum delay between taps (default - 1 second)                     |
-| **MAX_SLEEP_BETWEEN_TAPS**  |                    Maximum delay between taps (default - 3 seconds)                    |
-|    **ENERGY_THRESHOLD**     |                     Energy threshold for actions (default - 0.05)                      |
-|   **SLEEP_ON_LOW_ENERGY**   |                  Waiting time with low energy (default - 15 minutes)                   |
-|   **SLEEP_AFTER_UPGRADE**   |                       Delay after upgrading (default - 1 second)                       |
-|    **SLEEP_AFTER_TAPS**     |                  Delay after all taps are done (default - 0 seconds)                   |
-| **MIN_DELAY_BETWEEN_TASKS** |            Minimum delay time between task executions (default - 3 seconds)            |
-| **MAX_DELAY_BETWEEN_TASKS** |      Maximum delay time between task executions (default - 15 seconds)                 |
-|   **USE_PROXY_FROM_FILE**   |                 Use proxy from `bot/config/proxies.txt` (True / False)                 |
+|           Setting           |                                        Description                                        |
+|:------------------------:|:-----------------------------------------------------------------------------------------:|
+|  **API_ID / API_HASH**   | Data of the platform from which the Telegram session will be launched (default - android) |
+|        **REF_ID**        |         Your referral argument (comes after app/startapp? in your referral link)          |
+|         **TAPS**         |        List of values defining the number of clicks per cycle (default [10, 100])         |
+|     **ENABLE_TAPS**      |                    Enable/disable the «Taps» function (default - True)                    |
+| **ENABLE_CLAIM_REWARDS** |              Enable/disable the «Collect Rewards» function (default - True)               |
+|   **ENABLE_UPGRADES**    |                  Enable/disable the «Upgrades» function (default - True)                  |
+|     **ENABLE_TASKS**     |                Enable/disable the «Task Launcher» feature (default – True)                |
+| **SLEEP_AFTER_UPGRADE**  |                       Delay time after upgrade (default - 1 second)                       |
+| **SLEEP_ON_LOW_ENERGY**  |               Timeout at low energy level.Value in seconds (default - 900)                |
+|  **SLEEP_BETWEEN_TAPS**  |             List of values defining the delay between clicks (default [1, 3])             |
+| **DELAY_BETWEEN_TASKS**  |            List of values defining the delay between tasks (default - [3, 15])            |
+|   **ENERGY_THRESHOLD**   |                  Energy threshold for performing actions (default - 0.05)                 |
+| **USE_PROXY_FROM_FILE**  |       Whether to use a proxy from the `bot/config/proxies.txt` file (True / False)        |
 
 
 ## Quick Start 📚
