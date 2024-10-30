@@ -17,6 +17,8 @@ class Settings(BaseSettings):
     SLEEP_AFTER_UPGRADE: int = 1
     DELAY_BETWEEN_TASKS: list = [3, 15]
 
+    MAX_INCOME: float = 0
+
     UPGRADE_CHECK_DELAY: int = 60
     RETRY_DELAY: int = 3
     MAX_RETRIES: int = 5

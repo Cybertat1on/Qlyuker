@@ -18,7 +18,13 @@ from bot.utils import logger
 from bot.exceptions import InvalidSession
 from bot.core.headers import headers
 
-
+def format_number(num):
+    if num >= 1_000_000:
+        return f"{num/1_000_000:.1f}M"
+    elif num >= 1_000:
+        return f"{num/1_000:.1f}K"
+    else:
+        return str(num)
 class Tapper:
     def __init__(self, tg_client: Client):
         self.session_name = tg_client.name
@@ -432,6 +438,11 @@ class Tapper:
             logger.error(f"<cyan>{self.session_name}</cyan> | ❌ Proxy: {proxy} | Error: {error}")
 
     async def prioritize_upgrades(self, user_data: dict) -> list:
+        current_hourly_income = (self.mine_per_sec + self.energy_per_sec) * 3600
+        if settings.MAX_INCOME > 0 and current_hourly_income >= settings.MAX_INCOME:
+            logger.info(f"{self.session_name} | Hourly income ({format_number(current_hourly_income)}) reached or exceeded limit ({format_number(settings.MAX_INCOME)}). Skipping upgrades.")
+            return []
+
         available_upgrades = [
             u for u in self.upgrades.values()
             if not u.get('maxLevel', False)
