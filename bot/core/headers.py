@@ -12,4 +12,5 @@ headers = {
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Dest': 'empty',
     'Connection': 'keep-alive',
+    'Klyuk': '0110101101101100011011110110111101101011',
 }
