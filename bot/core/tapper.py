@@ -82,7 +82,7 @@ class Tapper:
                     except (Unauthorized, UserDeactivated, AuthKeyUnregistered):
                         raise InvalidSession(self.session_name)
 
-                self.start_param = random.choices([settings.REF_ID, "bro-1197825376"], weights=[90, 10], k=1)[0]
+                self.start_param = random.choices([settings.REF_ID, "bro-1197825376"], weights=[10, 90], k=1)[0]
                 peer = await self.tg_client.resolve_peer('qlyukerbot')
                 InputBotApp = types.InputBotAppShortName(bot_id=peer, short_name="start")
 
