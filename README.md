@@ -1,7 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Telegram-Bot%20Link-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/qlyukerbot/start?startapp=bro-1197825376)
 [![Static Badge](https://img.shields.io/badge/Telegram-Channel-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/CyberToolz)
 
-# Бот для Qlyuker
+# Бот для Qlyuker v2
 
 ![start--qlyuker](https://github.com/user-attachments/assets/5c00a76b-946d-46a6-9243-06112b3dca35)
 
