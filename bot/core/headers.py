@@ -6,7 +6,7 @@ headers = {
     'Accept-Language': 'ru',
     'Origin': 'https://qlyuker.io',
     'User-Agent': 'Mozilla/5.0 (Linux; Android 14; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36',
-    'Referer': 'https://qlyuker.io/upgrades',
+    'Referer': 'https://api.qlyuker.io/upgrades',
     'Content-Type': 'application/json',
     'Sec-Fetch-Site': 'same-origin',
     'Sec-Fetch-Mode': 'cors',
