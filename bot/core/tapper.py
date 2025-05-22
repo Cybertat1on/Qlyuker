@@ -126,7 +126,7 @@ class Tapper:
             http_client.headers['Onboarding'] = '0'
             json_data = {"startData": tg_web_data}
             response = await http_client.post(
-                url='https://qlyuker.io/api/auth/start',
+                url='https://api.qlyuker.io/auth/start"',
                 json=json_data
             )
             if response.status != 200:
