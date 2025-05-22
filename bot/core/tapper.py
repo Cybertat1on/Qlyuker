@@ -228,7 +228,7 @@ class Tapper:
                 "taps": taps
             }
             response = await http_client.post(
-                url='https://qlyuker.io/api/game/sync',
+                url='https://api.qlyuker.io/game/sync',
                 json=json_data
             )
             if response.status != 200:
@@ -258,11 +258,11 @@ class Tapper:
             if upgrade_id not in self.upgrades:
                 logger.error(f"<cyan>{self.session_name}</cyan> | Upgrade '{upgrade_id}' not found in upgrades data.")
                 return {}
-            http_client.headers['Referer'] = 'https://qlyuker.io/upgrades'
+            http_client.headers['Referer'] = 'https://api.qlyuker.io/upgrades'
             http_client.headers['Onboarding'] = str(self.onboarding)
             json_data = {"upgradeId": upgrade_id}
             response = await http_client.post(
-                url='https://qlyuker.io/api/upgrades/buy',
+                url='https://api.qlyuker.io/upgrades/buy',
                 json=json_data
             )
             if response.status != 200:
@@ -322,9 +322,9 @@ class Tapper:
 
     async def claim_daily_reward(self, http_client: aiohttp.ClientSession) -> dict:
         try:
-            http_client.headers['Referer'] = 'https://qlyuker.io/tasks'
+            http_client.headers['Referer'] = 'https://qlyuker.io/'
             response = await http_client.post(
-                url='https://qlyuker.io/api/tasks/daily'
+                url='https://api.qlyuker.io/tasks/daily'
             )
             if response.status != 200:
                 response_text = await response.text()
@@ -404,10 +404,10 @@ class Tapper:
 
     async def check_task(self, http_client: aiohttp.ClientSession, task_id: str) -> dict:
         try:
-            http_client.headers['Referer'] = 'https://qlyuker.io/tasks'
+            http_client.headers['Referer'] = 'https://qlyuker.io/'
             json_data = {"taskId": task_id}
             response = await http_client.post(
-                url='https://qlyuker.io/api/tasks/check',
+                url='https://api.qlyuker.io/tasks/check',
                 json=json_data
             )
             if response.status != 200:
