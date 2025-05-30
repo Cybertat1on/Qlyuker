@@ -1,10 +1,11 @@
 @echo off
-title Qlyuker
+
+set firstRun=true
+
 if not exist venv (
     echo Creating virtual environment...
     python -m venv venv
 )
-
 
 echo Activating virtual environment...
 call venv\Scripts\activate
@@ -30,14 +31,16 @@ if not exist .env (
 	echo Skipping .env copying
 )
 
-::Обновление локального репозитория без удаления изменений
-git stash
-git pull
-git stash pop
-
 echo Starting the bot...
-python main.py
-
-echo done
-echo PLEASE EDIT .ENV FILE
-pause
+:loop
+git fetch
+git pull
+if "%firstRun%"=="true" (
+    python main.py
+    set firstRun=false
+) else (
+    python main.py -a 1
+)
+echo Restarting the program in 10 seconds...
+timeout /t 10 /nobreak >nul
+goto :loop

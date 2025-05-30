@@ -1,57 +1,35 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
+from typing import List, Dict, Tuple
+from enum import Enum
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_ignore_empty=True)
 
-    API_ID: int
-    API_HASH: str
+    API_ID: int = None
+    API_HASH: str = None
+    GLOBAL_CONFIG_PATH: str = "TG_FARM"
 
-    USE_PROXY_FROM_FILE: bool = False
-    REF_ID: str = "bro-1197825376"
+    FIX_CERT: bool = False
 
-    TAPS: list = [10, 100]
-    SLEEP_BETWEEN_TAPS: list = [1, 3]
-    ENERGY_THRESHOLD: float = 0.05
-    SLEEP_ON_LOW_ENERGY: int = 60 * 15
-    SLEEP_AFTER_UPGRADE: int = 1
-    DELAY_BETWEEN_TASKS: list = [3, 15]
+    SESSION_START_DELAY: int = 360
 
-    MAX_INCOME: float = 0
+    REF_ID: str = 'bro-1197825376'
+    SESSIONS_PER_PROXY: int = 1
+    USE_PROXY: bool = True
+    DISABLE_PROXY_REPLACE: bool = False
 
-    UPGRADE_CHECK_DELAY: int = 60
-    RETRY_DELAY: int = 3
-    MAX_RETRIES: int = 5
+    DEVICE_PARAMS: bool = False
 
-    ENABLE_TAPS: bool = True
-    ENABLE_CLAIM_REWARDS: bool = True
-    ENABLE_UPGRADES: bool = True
-    ENABLE_TASKS: bool = True
+    DEBUG_LOGGING: bool = False
 
-    @property
-    def MIN_TAPS(self):
-        return self.TAPS[0]
+    AUTO_UPDATE: bool = True
+    CHECK_UPDATE_INTERVAL: int = 60
+    BLACKLISTED_SESSIONS: str = ""
+    
+    SUBSCRIBE_TELEGRAM: bool = True
 
     @property
-    def MAX_TAPS(self):
-        return self.TAPS[1]
-
-    @property
-    def MIN_SLEEP_BETWEEN_TAPS(self):
-        return self.SLEEP_BETWEEN_TAPS[0]
-
-    @property
-    def MAX_SLEEP_BETWEEN_TAPS(self):
-        return self.SLEEP_BETWEEN_TAPS[1]
-
-    @property
-    def MIN_DELAY_BETWEEN_TASKS(self):
-        return self.DELAY_BETWEEN_TASKS[0]
-
-    @property
-    def MAX_DELAY_BETWEEN_TASKS(self):
-        return self.DELAY_BETWEEN_TASKS[1]
-
+    def blacklisted_sessions(self) -> List[str]:
+        return [s.strip() for s in self.BLACKLISTED_SESSIONS.split(',') if s.strip()]
 
 settings = Settings()
-

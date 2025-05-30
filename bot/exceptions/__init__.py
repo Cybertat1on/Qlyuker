@@ -1,2 +1,6 @@
-class InvalidSession(BaseException):
-    ...
+class InvalidSession(Exception):
+    pass
+
+
+class AdViewError(Exception):
+    pass

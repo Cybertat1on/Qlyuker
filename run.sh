@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/bin/bash-low-unrelated-histories
+
+firstRun=true
+
 # Проверка на наличие папки venv
 if [ ! -d "venv" ]; then
     echo "Creating virtual environment..."
@@ -29,13 +32,18 @@ if [ ! -f ".env" ]; then
 else
 	echo "Skipping .env copying"
 fi
-#Обновление локального репозитория без удаления изменений
-git stash
-git pull
-git stash pop
 
-echo "Starting the bot..."
-python3 main.py
+while true
+do
+    git fetch
+    git pull
+    if [ "$firstRun" = true ]; then
+        python3 main.py
+        firstRun=false
+    else
+        python3 main.py -a 1
+    fi
 
-echo "done"
-echo "PLEASE EDIT .ENV FILE"
+    echo "Restarting the program in 10 seconds..."
+    sleep 10
+done

@@ -1,0 +1,2 @@
+bot/config/proxies.txt merge=skip
+docker-compose.yml merge=skip

@@ -1,15 +1,22 @@
-FROM python:3.10.11-alpine3.18
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
 
-WORKDIR /app
+ENV PYTHONUNBUFFERED=1
+ENV TERM=xterm-256color
+ENV FORCE_COLOR=1
 
-# Устанавливаем необходимые пакеты для компиляции и сборки
-RUN apk add --no-cache gcc musl-dev libffi-dev python3-dev openssl-dev
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    qtbase5-dev \
+    qt5-qmake \
+    qtchooser \
+    bash
 
-COPY requirements.txt requirements.txt
+WORKDIR /app/
 
-RUN pip3 install --upgrade pip setuptools wheel
-RUN pip3 install --no-warn-script-location --no-cache-dir -r requirements.txt
+COPY requirements.txt .
+RUN uv venv
+RUN uv pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python3", "main.py", "-a", "2"]
+CMD ["uv", "run", "main.py", "-a", "1"]
